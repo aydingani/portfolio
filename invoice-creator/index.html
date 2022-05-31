@@ -1,0 +1,55 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <section class="headline">
+            <div class="invoice-creator">
+                <h1 style="color: #2b283a; font-weight: 800;">Invoice Creator</h1>
+                <p style="color: #2b283a;">Thanks for choosing Freedom LLC!</p>
+            </div>
+        </section>
+
+        <section class="second">
+            <div class="the-rest">
+                <div class="btn-part">
+                <button class="btns" id="btn-10">Wash Car: $10</button>
+                <button class="btns" id="btn-20">Mow Lawn: $20</button>
+                <button class="btns" id="btn-30">Pull Weeds: $30</button>
+                </div>
+
+                <div class="task-notes">
+                <div id="task">
+                    <p style="color: #9e9ca8; font-size: 0.75rem; text-align: left;">TASK</p>
+                    <span id="car-el" style="color: #4a4e74; font-weight: 900; text-align: left;"></span>
+                    <span id="lawn-el" style="color: #4a4e74; font-weight: 900; text-align: left;"></span>
+                    <span id="weed-el" style="color: #4a4e74; font-weight: 900; text-align: left;"></span>
+                </div>
+                <div id="task-total">
+                    <p style="color: #9e9ca8">TOTAL</p>
+                    <span id="car-cost"></span>
+                    <span id="lawn-cost"></span>
+                    <span id="weed-cost"></span>
+                </div>
+                </div>
+                <hr />
+                    <div class="last-section">
+                        <div class="notes">
+                            <p class="notes-header">NOTES</p>
+                            <p class="notes-footnote">We accept cash, credit card, or PayPal</p>   
+                        </div>
+                        <div class="total-paragraph">
+                            <p id="total-amount">TOTAL AMOUNT</p>
+                            <p id="total-spent" style="color: #4a4e74">$<span id="sum" style="color: #4a4e74">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="send-invoice">
+                <button id="send-btn"><span><svg class="mail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/></svg></span><span id="send-text">Send invoice</span></button>
+            </div>
+        </section>
+            <script src="index.js"></script>
+    </body>
+</html>
