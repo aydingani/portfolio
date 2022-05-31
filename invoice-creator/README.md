@@ -4,7 +4,7 @@ This is an assessment project called 'Invoice Creator'. I have built it by using
 
 # About The Project
 
-We have three buttons and they can be clicked only once. Remove buttons appear nearby each buttons, once they are clicked. Calculations done according to each service's cost and it is also applied to the total cost as well. Send button will clear all services and cost, once it is clicked.
+Project deployment can be found at https://invoice-creator-gani.netlify.app. We have three buttons and they can be clicked only once. Remove buttons appear nearby each buttons, once they are clicked. Calculations done according to each service's cost and it is also applied to the total cost as well. Send button will clear all services and cost, once it is clicked.
 
 ## License
 
