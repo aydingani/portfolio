@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.main {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #f55a56;
+}
+
+.card,
+.location-map {
+  display: flex;
+}
+
+.card {
+  padding: 20px;
+}
+
+.location-map {
+  display: flex;
+  width: 20em;
+}
+
+.icon,
+.country,
+.url {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.icon {
+  fill: #f55a56;
+  width: 0.5em;
+}
+
+.country {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 10.24px;
+}
+
+.url {
+  color: #918e9b;
+  font-size: 10.24px;
+}
+
+.imgs {
+  width: 126px;
+  height: 168px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.img {
+  margin-left: 40px;
+  margin-right: 19px;
+}
+
+h1,
+p,
+a {
+  margin: 0;
+}
+
+.description {
+  font-size: 10.24px;
+  width: 326px;
+}
+
+.timeline {
+  font-size: 10.24px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.general-info {
+  margin: auto 0;
+}
+
+.navbar {
+  display: flex;
+  background-color: #f55a56;
+  justify-content: center;
+  height: 55px;
+  align-items: center;
+}
+
+.earth {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  margin-right: 10px;
+}
+
+.header {
+  color: white;
+}
+
+.line {
+  width: 478px;
+  margin-left: 60px;
+  border: 1px solid #f5f5f5;
+}
