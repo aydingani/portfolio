@@ -1,0 +1,21 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.color-show, .color-container {
+    height: 250px;
+    width: 100%;
+    /* border: 1px solid red; */
+   
+}
+
+#color-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.color-id {
+    text-align: center;
+}
