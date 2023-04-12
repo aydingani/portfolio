@@ -6,10 +6,12 @@ function Quiz(props) {
   };
 
   return (
-    <div>
-      <h2>Quizzical</h2>
+    <div className="quiz-intro">
+      <h2 className="quiz-header">Quizzical</h2>
       <h3>5 random questions, you better be ready!</h3>
-      <button onClick={handleClick}>Start quiz</button>
+      <button className="start-btn" onClick={handleClick}>
+        Start quiz
+      </button>
     </div>
   );
 }
