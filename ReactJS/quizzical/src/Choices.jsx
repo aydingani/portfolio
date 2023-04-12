@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-function Choices({ onChoiceClick, selectedChoice, choices }) {
+function Choices({
+  onChoiceClick,
+  selectedChoice,
+  choices,
+  showAnswers,
+  correctAnswer,
+}) {
   const replaceCharacters = (text) => {
     return text.replace(/&quot;/g, '"').replace(/&#039;/g, "'");
   };
@@ -14,7 +20,13 @@ function Choices({ onChoiceClick, selectedChoice, choices }) {
           onClick={() => onChoiceClick(choice)}
           style={{
             backgroundColor:
-              choice === selectedChoice ? "lightblue" : "transparent",
+              showAnswers && choice === correctAnswer
+                ? "rgba(0, 255, 0, 0.5)"
+                : showAnswers && choice === selectedChoice
+                ? "rgba(255, 0, 0, 0.5)"
+                : choice === selectedChoice
+                ? "rgba(0, 0, 255, 0.5)"
+                : "transparent",
           }}
         >
           {replaceCharacters(choice)}

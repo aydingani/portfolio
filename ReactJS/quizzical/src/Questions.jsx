@@ -1,17 +1,22 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Choices from "./Choices";
+import Check from "./Check";
 
 function Questions() {
   const [questions, setQuestions] = useState([]);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(null);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState({});
 
-  useEffect(() => {
+  const fetchQuestions = () => {
     fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
       .then((res) => res.json())
       .then((data) => setQuestions(data.results));
+  };
+
+  useEffect(() => {
+    fetchQuestions();
   }, []);
 
   useEffect(() => {
@@ -32,9 +37,9 @@ function Questions() {
       [qIndex]: choice,
     }));
 
-    if (choice === questions[qIndex].correct_answer) {
-      setScore((prevScore) => prevScore + 1);
-    }
+    // if (choice === questions[qIndex].correct_answer) {
+    //   setScore((prevScore) => prevScore + 1);
+    // }
   };
 
   function shuffleAnswers(answer) {
@@ -43,6 +48,22 @@ function Questions() {
 
   const replaceCharacters = (text) => {
     return text.replace(/&quot;/g, '"').replace(/&#039;/g, "'");
+  };
+
+  function handleCheckAnswers() {
+    let correctAnswers = 0;
+    questions.map((question, index) => {
+      if (selectedAnswers[index] === question.correct_answer) {
+        correctAnswers += 1;
+      }
+    });
+    setScore(correctAnswers);
+  }
+
+  const handlePlayAgain = () => {
+    setSelectedAnswers({});
+    setScore(null);
+    fetchQuestions();
   };
 
   return (
@@ -54,11 +75,17 @@ function Questions() {
             choices={q.choices}
             onChoiceClick={(choice) => handleChoiceClick(i, choice)}
             selectedChoice={selectedAnswers[i]}
+            showAnswers={score !== null}
+            correctAnswer={q.correct_answer}
           />
         </div>
       ))}
-
-      {score !== 0 && (
+      <Check
+        onCheckAnswers={handleCheckAnswers}
+        onPlayAgain={handlePlayAgain}
+        score={score}
+      />
+      {score !== null && (
         <p>
           You scored {score}/{questions.length} answers.
         </p>

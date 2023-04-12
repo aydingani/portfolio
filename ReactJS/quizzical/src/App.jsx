@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./main.css";
 import Quiz from "./Quiz";
-import Check from "./Check";
 import Questions from "./Questions";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
   return (
     <div>
       <Questions />
-      <Check />
     </div>
   );
 }
