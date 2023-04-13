@@ -69,7 +69,7 @@ function Questions() {
   return (
     <div>
       {shuffledQuestions.map((q, i) => (
-        <div key={i}>
+        <div className="whole-question" key={i}>
           <h2 className="question">{replaceCharacters(q.question)}</h2>
           <Choices
             choices={q.choices}

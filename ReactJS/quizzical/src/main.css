@@ -40,7 +40,7 @@ h3 {
   background: none;
   border-radius: 10px;
   border: 0.8px solid #4d5b9e;
-  min-width: 120px;
+  min-width: 200px;
   height: 25px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -73,4 +73,13 @@ ul {
   display: flex;
   list-style: none;
   gap: 10px;
+}
+
+.whole-question {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  border-bottom: 1px solid black;
+  margin: 0 10px;
+  gap: 20px;
 }
