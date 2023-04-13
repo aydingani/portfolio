@@ -38,15 +38,16 @@ h3 {
 
 .mixed-answers {
   background: none;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 0.8px solid #4d5b9e;
-  width: 120px;
-  height: 6vh;
+  min-width: 120px;
+  height: 25px;
   font-size: 0.9rem;
   font-weight: 500;
   text-align: center;
   color: #293264;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .check-answers {
@@ -66,4 +67,10 @@ h3 {
   font-weight: 700;
   font-size: 1rem;
   color: #293264;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
 }
