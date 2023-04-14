@@ -40,14 +40,13 @@ h3 {
   background: none;
   border-radius: 10px;
   border: 0.8px solid #4d5b9e;
-  min-width: 200px;
-  height: 25px;
   font-size: 0.9rem;
   font-weight: 500;
   text-align: center;
   color: #293264;
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal;
+  padding: 3px 15px;
 }
 
 .check-answers {
@@ -67,19 +66,51 @@ h3 {
   font-weight: 700;
   font-size: 1rem;
   color: #293264;
+  margin-top: 20px;
 }
 
 ul {
   display: flex;
   list-style: none;
-  gap: 10px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .whole-question {
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
-  border-bottom: 1px solid black;
-  margin: 0 40px;
+  border-bottom: 1px solid #dbdef0;
   gap: 20px;
+}
+
+.correct-answers {
+  color: #293264;
+  display: flex;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.everything {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 810px) {
+  .everything {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mixed-answers {
+    width: 50%;
+    margin: 0 auto;
+    white-space: normal;
+  }
 }

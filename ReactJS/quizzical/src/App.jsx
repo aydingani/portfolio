@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="everything">
       <Questions />
     </div>
   );

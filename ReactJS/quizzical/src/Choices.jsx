@@ -7,8 +7,13 @@ function Choices({
   showAnswers,
   correctAnswer,
 }) {
-  const replaceCharacters = (text) => {
-    return text.replace(/&quot;/g, '"').replace(/&#039;/g, "'");
+  // const replaceCharacters = (text) => {
+  //   return text.replace(/&quot;/g, '"').replace(/&#039;/g, "'");
+  // };
+
+  const decodeEntities = (text) => {
+    const parser = new DOMParser();
+    return parser.parseFromString(text, "text/html").body.textContent;
   };
 
   return (
@@ -21,15 +26,15 @@ function Choices({
           style={{
             backgroundColor:
               showAnswers && choice === correctAnswer
-                ? "rgba(0, 255, 0, 0.5)"
+                ? "#94D7A2"
                 : showAnswers && choice === selectedChoice
-                ? "rgba(255, 0, 0, 0.5)"
+                ? "#F8BCBC"
                 : choice === selectedChoice
-                ? "rgba(0, 0, 255, 0.5)"
+                ? "#D6DBF5"
                 : "transparent",
           }}
         >
-          {replaceCharacters(choice)}
+          {decodeEntities(choice)}
         </li>
       ))}
     </ul>

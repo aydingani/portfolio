@@ -36,18 +36,23 @@ function Questions() {
       ...prevSelectedAnswers,
       [qIndex]: choice,
     }));
-
-    // if (choice === questions[qIndex].correct_answer) {
-    //   setScore((prevScore) => prevScore + 1);
-    // }
   };
 
   function shuffleAnswers(answer) {
     return answer.sort(() => Math.random() - 0.5);
   }
 
-  const replaceCharacters = (text) => {
-    return text.replace(/&quot;/g, '"').replace(/&#039;/g, "'");
+  // const replaceCharacters = (text) => {
+  //   return text
+  //     .replace(/&quot;/g, '"')
+  //     .replace(/&#039;/g, "'")
+  //     .replace(/&amp;/g, "&")
+  //     .replace(/&grave;/g, "`");
+  // };
+
+  const decodeEntities = (text) => {
+    const parser = new DOMParser();
+    return parser.parseFromString(text, "text/html").body.textContent;
   };
 
   function handleCheckAnswers() {
@@ -70,7 +75,7 @@ function Questions() {
     <div>
       {shuffledQuestions.map((q, i) => (
         <div className="whole-question" key={i}>
-          <h2 className="question">{replaceCharacters(q.question)}</h2>
+          <h2 className="question">{decodeEntities(q.question)}</h2>
           <Choices
             choices={q.choices}
             onChoiceClick={(choice) => handleChoiceClick(i, choice)}
@@ -86,8 +91,8 @@ function Questions() {
         score={score}
       />
       {score !== null && (
-        <p>
-          You scored {score}/{questions.length} answers.
+        <p className="correct-answers">
+          You scored {score}/{questions.length} answers
         </p>
       )}
     </div>
