@@ -34,6 +34,7 @@ h3 {
   height: 50px;
   font-size: 1rem;
   color: #f5f7fb;
+  cursor: pointer;
 }
 
 .mixed-answers {
