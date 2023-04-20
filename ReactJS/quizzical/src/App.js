@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./main.css";
 import Quiz from "./Quiz";
 import Questions from "./Questions";

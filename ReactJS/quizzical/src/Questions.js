@@ -42,14 +42,6 @@ function Questions() {
     return answer.sort(() => Math.random() - 0.5);
   }
 
-  // const replaceCharacters = (text) => {
-  //   return text
-  //     .replace(/&quot;/g, '"')
-  //     .replace(/&#039;/g, "'")
-  //     .replace(/&amp;/g, "&")
-  //     .replace(/&grave;/g, "`");
-  // };
-
   const decodeEntities = (text) => {
     const parser = new DOMParser();
     return parser.parseFromString(text, "text/html").body.textContent;
@@ -57,7 +49,7 @@ function Questions() {
 
   function handleCheckAnswers() {
     let correctAnswers = 0;
-    questions.map((question, index) => {
+    questions.forEach((question, index) => {
       if (selectedAnswers[index] === question.correct_answer) {
         correctAnswers += 1;
       }
